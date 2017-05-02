@@ -11,12 +11,16 @@ export default {
 </script>
 
 <style>
+
+body {
+  background: linear-gradient(to right, #9fd4cd, #7bc1b8);
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

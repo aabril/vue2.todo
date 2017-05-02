@@ -1,5 +1,5 @@
 <template>
-
+  <div class="container"></div>
 </template>
 
 <script>
@@ -13,4 +13,25 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  width: 350px;
+  height: 600px;
+  border: 0px solid #ddd;
+  font-family: sans-serif;
+  background: #eee;
+  margin:auto;
+
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+          border-radius: 6px;
+
+  box-shadow: 9px 7px 40px -6px rgba(0,0,0,0.25);
+}
 </style>
