@@ -17,7 +17,6 @@ export default {
 </script>
 
 <style scoped>
-
 .ripple {
   position: relative;
   overflow: hidden;
@@ -32,12 +31,12 @@ export default {
   top: 0;
   left: 0;
   pointer-events: none;
-  background-image: radial-gradient(circle, #000 10%, transparent 10.01%);
+  background-image: radial-gradient(circle, #888 10%, transparent 10.01%);
   background-repeat: no-repeat;
   background-position: 50%;
   transform: scale(10, 10);
   opacity: 0;
-  transition: transform .5s, opacity 1s;
+  transition: transform .6s, opacity 1s;
 }
 .ripple:active:after {
   transform: scale(0, 0);
@@ -48,7 +47,7 @@ export default {
 .addButtonContainer {
   position: absolute;
   bottom: -40px;
-  width: 100%;
+  text-align: middle;
 }
 
 
@@ -86,9 +85,4 @@ export default {
   line-height: 74px;
   user-select: none;
 }
-
-
-
-
-
 </style>

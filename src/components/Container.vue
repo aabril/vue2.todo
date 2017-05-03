@@ -25,18 +25,21 @@ export default {
 
 <style scoped>
 .container {
-  width: 350px;
+  display: flex;
+  justify-content: center;
+  width: 330px;
   height: 600px;
   border: 0px solid #ddd;
   font-family: sans-serif;
   background: #fff;
   margin:auto;
-
+  padding: 20px;
   top:0;
   right: 0;
   bottom: 0;
   left: 0;
   position: absolute;
+
 
   -webkit-border-radius: 6px;
      -moz-border-radius: 6px;
