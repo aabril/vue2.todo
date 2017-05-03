@@ -2,6 +2,7 @@
   <div class="container">
     <TopDates />
     <AddButton/>
+    <TasksList/>
   </div>
 </template>
 
@@ -9,12 +10,14 @@
 
 import AddButton from './AddButton'
 import TopDates from './TopDates'
+import TasksList from './TasksList'
 
 export default {
   name: 'container',
   components: {
     AddButton,
-    TopDates
+    TopDates,
+    TasksList
   },
   data () {
     return {
