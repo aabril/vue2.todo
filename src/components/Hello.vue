@@ -1,10 +1,18 @@
 <template>
-  <div class="container"></div>
+  <div class="container">
+    <AddButton/>
+  </div>
 </template>
 
 <script>
+
+import AddButton from './addbutton'
+
 export default {
   name: 'hello',
+  components: {
+    AddButton
+  },
   data () {
     return {
     }
@@ -18,7 +26,7 @@ export default {
   height: 600px;
   border: 0px solid #ddd;
   font-family: sans-serif;
-  background: #eee;
+  background: #fff;
   margin:auto;
 
   top:0;
@@ -32,6 +40,6 @@ export default {
       -ms-border-radius: 6px;
           border-radius: 6px;
 
-  box-shadow: 9px 7px 40px -6px rgba(0,0,0,0.25);
+  box-shadow: 2px 6px 10px -6px rgba(0,0,0,0.25);
 }
 </style>
