@@ -22,6 +22,15 @@ export default {
 @buttonColorHover: lightgreen;
 @buttonSignColor: #47C18D;
 
+.set-border(@color: red) {
+    border: 1px solid @color;
+}
+
+.set-dimensions(@w: auto, @h: auto) {
+  width: @w;
+  height: @h;
+}
+
 .ripple {
   position: relative;
   overflow: hidden;
@@ -52,27 +61,28 @@ export default {
 }
 
 .addButtonContainer {
+  margin: none;
+  width: 100%;
   position: absolute;
   bottom: -40px;
-  text-align: middle;
+  justify-content: center;
   .addButton {
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-    width: 80px;
-    height: 80px;
-    border: none;
-    border-radius: 40px;
-    background: @buttonColor;
-    box-shadow: 2px 7px 10px -6px rgba(0,0,0,0.25);
-    cursor: pointer;
+      background: @buttonColor;
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+      .set-dimensions(80px, 80px);
+      border: none;
+      border-radius: 40px;
+      box-shadow: 2px 7px 10px -6px rgba(0,0,0,0.25);
+      cursor: pointer;
+
     &:hover {
       background: @buttonColorHover;
       margin-right: auto;
       margin-left: auto;
       text-align: center;
-      width: 80px;
-      height: 80px;
+      .set-dimensions(80px, 80px);
       border: none;
       border-radius: 40px;
       box-shadow: 2px 7px 10px -6px rgba(0,0,0,0.25);
@@ -81,7 +91,7 @@ export default {
     .plusSign {
       color: @buttonSignColor;
       font-size: 44px;
-      line-height: 74px;
+      line-height: 78px;
       user-select: none;
     }
   }

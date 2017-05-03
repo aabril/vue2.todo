@@ -26,29 +26,44 @@ export default {
 }
 </script>
 
-<style scoped>
-.container {
-  display: flex;
-  justify-content: center;
-  width: 330px;
-  height: 600px;
-  border: 0px solid #ddd;
-  font-family: sans-serif;
-  background: #fff;
+<style lang="less" scoped>
+
+.set-radius(@px: 6px) {
+  -webkit-border-radius: @px;
+     -moz-border-radius: @px;
+      -ms-border-radius: @px;
+          border-radius: @px;
+}
+
+.set-center-screen() {
   margin:auto;
-  padding: 20px;
   top:0;
   right: 0;
   bottom: 0;
   left: 0;
   position: absolute;
+}
 
+.set-border() {
+    border: 0px solid #ddd;
+}
 
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-      -ms-border-radius: 6px;
-          border-radius: 6px;
+.set-dimensions(@w: 330px, @h: 600px) {
+  width: @w;
+  height: @h;
+}
 
+.set-box-shadow(){
   box-shadow: 2px 6px 10px -6px rgba(0,0,0,0.25);
+}
+
+.container {
+  /* display: flex; */
+  /* justify-content: center; */
+  background: #fff;
+  .set-dimensions();
+  .set-center-screen;
+  .set-radius(6px);
+  .set-box-shadow();
 }
 </style>

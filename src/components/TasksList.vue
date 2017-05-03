@@ -1,6 +1,6 @@
 <template>
   <div class="TasksList">
-    <h4>tasks lists</h4>
+    tasks lists
   </div>
 </template>
 
@@ -14,7 +14,22 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+
+.set-border(@color: red) {
+    border: 1px solid @color;
+}
+
+.set-dimensions(@w: auto, @h: auto) {
+  width: @w;
+  height: @h;
+}
+
 .TasksList {
+  clear:both;
+  margin: 30px 0;
+  padding: 20px;
+
+
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="topDates">
-    <div class="date">
+    <div class="datetime left">
       <div class="left">
         <div class="day">12</div>
       </div>
@@ -9,7 +9,7 @@
         <div class="year">2016</div>
       </div>
     </div>
-    <div class="weekday">tuesday</div>
+    <div class="weekday right">tuesday</div>
   </div>
 </template>
 
@@ -23,46 +23,47 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
-@import url('https://fonts.googleapis.com/css?family=Exo+2');
+@import "https://fonts.googleapis.com/css?family=Exo+2";
+@font: 'Exo 2', sans-serif;
+
+.set-border(@color: red) {
+    border: 1px solid @color;
+}
 
 .topDates {
-  width: 100%;
-  display: flex;
-  font-family: 'Exo 2', sans-serif;
+  font-family: @font;
   padding: 20px;
-}
 
-.date {
-  display: flex;
-  width: 30%;
-}
+  .datetime {
+    width: 30%;
+    float: left;
+    .left {
+      .day {
+        float: left;
+        font-size: 44px;
+        margin-right: 10px;
+      }
+    }
+    .right {
+      font-size: 14px;
+      margin-top: 13px;
+      .month {
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+    }
+  }
 
-.date .left .day {
-  font-size: 44px;
-  margin-right: 10px;
+  .weekday {
+    float: right;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 14px;
+    width: 60%;
+    margin-top: 12px;
+    margin-right: 4px;
+  }
 }
-
-.date .right {
-  font-size: 14px;
-  margin-top: 13px;
-}
-
-.date .right .month {
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.date .right .year {
-}
-
-.weekday {
-  text-align: right;
-  text-transform: uppercase;
-  font-size: 14px;
-  width: 70%;
-  margin-top: 30px;
-}
-
 </style>
