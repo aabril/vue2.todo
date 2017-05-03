@@ -1,12 +1,19 @@
 <template>
   <div class="TasksList">
-    tasks lists
+    <Task description="Read an article" />
+    <Task description="Write a novel" />
+    <Task description="Sing like Kurt Cobain" />
   </div>
 </template>
 
 <script>
+import Task from './Task'
+
 export default {
   name: 'taskslist',
+  components: {
+    Task
+  },
   data () {
     return {
     }
