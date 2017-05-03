@@ -1,17 +1,20 @@
 <template>
   <div class="container">
+    <TopDates />
     <AddButton/>
   </div>
 </template>
 
 <script>
 
-import AddButton from './addbutton'
+import AddButton from './AddButton'
+import TopDates from './TopDates'
 
 export default {
-  name: 'hello',
+  name: 'container',
   components: {
-    AddButton
+    AddButton,
+    TopDates
   },
   data () {
     return {
