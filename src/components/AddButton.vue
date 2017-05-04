@@ -1,6 +1,6 @@
 <template>
   <div class="addButtonContainer">
-    <div class="addButton ripple">
+    <div class="addButton ripple" @click="clicked()">
       <div class="plusSign">+</div>
     </div>
   </div>
@@ -9,6 +9,11 @@
 <script>
 export default {
   name: 'addbutton',
+  methods: {
+    clicked () {
+      alert('hola')
+    }
+  },
   data () {
     return {
     }
