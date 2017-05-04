@@ -1,18 +1,24 @@
 <template>
   <div class="TasksList">
-    <Task description="Read an article" done=false />
-    <Task description="Write a novel" done=false />
-    <Task description="Sing like Kurt Cobain" done=true />
+    <div v-for="task in tasks">
+      <Task :description="task.description" :done="task.done" />
+    </div>
   </div>
 </template>
 
 <script>
 import Task from './Task'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'taskslist',
   components: {
     Task
+  },
+  computed: {
+    ...mapGetters([
+      'tasks'
+    ])
   },
   data () {
     return {

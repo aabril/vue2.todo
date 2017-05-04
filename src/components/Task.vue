@@ -1,12 +1,17 @@
-<template>
+<template v-if="done">
   <div class="task">
-    <div class="textDescription">{{ description }}</div>
+    <div class="textDescription done">{{ description }}</div>
+    <div class="buttonCheck done"></div>
+  </div>
+</template>
+<template v-else>
+  <div class="task">
+    <div class="textDescription ">{{ description }}</div>
     <div class="buttonCheck"></div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'task',
   props: {
@@ -56,6 +61,11 @@ export default {
     width: 60%;
     float: left;
   }
+
+  .textDescription.done {
+    color: red;
+  }
+
   .buttonCheck {
     float: right;
     width: @checkHeight;
@@ -69,6 +79,12 @@ export default {
       border: 3px solid @checkColorEnabled;
     }
   }
+
+
+  .buttonCheck.done {
+    border: 3px solid @checkColorEnabled;
+  }
+
 
 }
 
