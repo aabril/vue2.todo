@@ -1,8 +1,8 @@
 <template>
   <div class="TasksList">
-    <Task description="Read an article" />
-    <Task description="Write a novel" />
-    <Task description="Sing like Kurt Cobain" />
+    <Task description="Read an article" done=false />
+    <Task description="Write a novel" done=false />
+    <Task description="Sing like Kurt Cobain" done=true />
   </div>
 </template>
 
