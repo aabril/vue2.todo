@@ -28,6 +28,9 @@ export default {
 
 <style lang="less" scoped>
 
+@width: 330px;
+@height: 560px;
+
 .set-radius(@px: 6px) {
   -webkit-border-radius: @px;
      -moz-border-radius: @px;
@@ -37,7 +40,8 @@ export default {
 
 .set-center-screen() {
   margin:auto;
-  top:0;
+  margin-top: 40px;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -48,7 +52,7 @@ export default {
     border: 0px solid #ddd;
 }
 
-.set-dimensions(@w: 330px, @h: 600px) {
+.set-dimensions(@w, @h) {
   width: @w;
   height: @h;
 }
@@ -61,7 +65,7 @@ export default {
   /* display: flex; */
   /* justify-content: center; */
   background: #fff;
-  .set-dimensions();
+  .set-dimensions(@width, @height);
   .set-center-screen;
   .set-radius(6px);
   .set-box-shadow();
