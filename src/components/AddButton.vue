@@ -11,7 +11,7 @@ export default {
   name: 'addbutton',
   methods: {
     clicked () {
-      alert('hola')
+      this.$store.commit('new')
     }
   },
   data () {

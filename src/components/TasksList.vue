@@ -1,7 +1,7 @@
 <template>
   <div class="TasksList">
-    <div v-for="task in tasks">
-      <Task :description="task.description" :done="task.done" />
+    <div v-for="(task, index) in tasks">
+      <Task :description="task.description" :done="task.done" :index="index" />
     </div>
   </div>
 </template>
@@ -42,7 +42,5 @@ export default {
   clear:both;
   margin: 30px 0;
   padding: 20px;
-
-
 }
 </style>

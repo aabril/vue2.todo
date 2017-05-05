@@ -1,13 +1,11 @@
-<template v-if="done">
-  <div class="task">
+<template>
+  <div v-if="done" class="task">
     <div class="textDescription done">{{ description }}</div>
-    <div class="buttonCheck done"></div>
+    <div class="buttonCheck done" @click="uncheckTask"></div>
   </div>
-</template>
-<template v-else>
-  <div class="task">
-    <div class="textDescription ">{{ description }}</div>
-    <div class="buttonCheck"></div>
+  <div v-else class="task">
+    <div class="textDescription">{{ description }}</div>
+    <div class="buttonCheck" @click="checkTask"></div>
   </div>
 </template>
 
@@ -15,6 +13,9 @@
 export default {
   name: 'task',
   props: {
+    index: {
+      type: Number
+    },
     description: {
       type: String,
       required: true
@@ -22,6 +23,14 @@ export default {
     done: {
       type: Boolean,
       required: true
+    }
+  },
+  methods: {
+    checkTask () {
+      this.$store.commit('switchCheck', this.index)
+    },
+    uncheckTask () {
+      this.$store.commit('switchCheck', this.index)
     }
   },
   data () {
@@ -37,11 +46,12 @@ export default {
 
 @height: 40px;
 
-@descriptionColor: rgb(85, 88, 98);
+@descriptionColorUnchecked: rgb(85, 88, 98);
+@descriptionColorChecked: rgb(205, 206, 215);
 
-@checkColorDisabled: rgb(234, 236, 242);
-@checkColorEnabled: rgb(108, 229, 164);
-@checkHeight: 20px;
+@checkColorUnchecked: rgb(234, 236, 242);
+@checkColorChecked: rgb(108, 229, 164);
+@checkHeight: 22px;
 
 
 .set-border() {
@@ -54,7 +64,7 @@ export default {
   line-height: @height;
   padding: 0 6px;
 
-  color: @descriptionColor;
+  color: @descriptionColorUnchecked;
   font-weight: 440;
 
   .textDescription {
@@ -63,26 +73,29 @@ export default {
   }
 
   .textDescription.done {
-    color: red;
+    color: @descriptionColorChecked;
   }
 
   .buttonCheck {
     float: right;
     width: @checkHeight;
     height: @checkHeight;
-    margin-top: 6px;
-    border: 3px solid @checkColorDisabled;
+    margin-top: 8px;
+    border: 3px solid @checkColorUnchecked;
     border-radius: @height;
     cursor: pointer;
 
     &:hover {
-      border: 3px solid @checkColorEnabled;
+      border: 3px solid darken(@checkColorUnchecked, 5%);
     }
   }
 
 
   .buttonCheck.done {
-    border: 3px solid @checkColorEnabled;
+    border: 3px solid @checkColorChecked;
+    &:after{
+      color: @checkColorChecked;
+    }
   }
 
 

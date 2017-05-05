@@ -14,7 +14,7 @@ export const store = new Vuex.Store({
       },
       {
         description: 'Sing a song',
-        done: false
+        done: true
       }
     ]
   },
@@ -28,6 +28,15 @@ export const store = new Vuex.Store({
 
   // Mutating the state ; mutations are always synchronous
   mutations: {
+    new: (state) => {
+      state.tasks.push({
+        description: 'new task',
+        done: false
+      })
+    },
+    switchCheck: (state, index) => {
+      state.tasks[index].done = !state.tasks[index].done
+    }
   },
 
   // Commits the mutation, it's asynchronous
