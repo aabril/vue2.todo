@@ -39,8 +39,10 @@ export default {
 }
 
 .TasksList {
+  max-height: 360px;
   clear:both;
-  margin: 30px 0;
+  margin: 0;
   padding: 20px;
+  overflow: scroll;
 }
 </style>

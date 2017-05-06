@@ -4,7 +4,7 @@
     <div class="buttonCheck done" @click="uncheckTask"></div>
   </div>
   <div v-else class="task">
-    <div class="textDescription">{{ description }}</div>
+    <div class="textDescription" v-model="description" @click="editDescription(description)">{{ description }}</div>
     <div class="buttonCheck" @click="checkTask"></div>
   </div>
 </template>
@@ -26,6 +26,11 @@ export default {
     }
   },
   methods: {
+    editDescription (description) {
+      alert(description)
+      // this.newDescription = newDescription
+      // this.$store.commit('editDescription', this.text)
+    },
     checkTask () {
       this.$store.commit('switchCheck', this.index)
     },
@@ -35,6 +40,7 @@ export default {
   },
   data () {
     return {
+      editedDescription: this.description
     }
   }
 }
@@ -84,7 +90,6 @@ export default {
     border: 3px solid @checkColorUnchecked;
     border-radius: @height;
     cursor: pointer;
-
     &:hover {
       border: 3px solid darken(@checkColorUnchecked, 5%);
     }
@@ -94,6 +99,7 @@ export default {
   .buttonCheck.done {
     border: 3px solid @checkColorChecked;
     &:after{
+      content: '✓';
       color: @checkColorChecked;
     }
   }
